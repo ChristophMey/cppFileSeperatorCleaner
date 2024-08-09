@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "file-seperator-cleaner"
+version = "0.1.0"
+description = "A simple tool to clean up file names and move them to a new directory"
+authors = ["Christoph Meyer <christoph.meyer@kiongroup.com>"]
+readme = "README.md"
+packages = [{ include = "file_cleaner" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.scripts]
+cleaner = "file_cleaner.cleaner:main"
+
+[build-system]
+requires = ["poetry-core"]
+backend-path = "poetry.core.masonry.api"
