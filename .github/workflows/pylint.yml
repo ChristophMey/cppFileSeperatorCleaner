@@ -34,8 +34,12 @@ jobs:
         key: venv-${{ hashFiles('poetry.lock') }}
     - name: Install the project dependencies
       run: poetry install
-    - name: Upload Poetry package as artifact
+    - name: Build the package
+      run: poetry build
+    - name: Upload built package as artifact
       uses: actions/upload-artifact@v3
       with:
         name: poetry-package
-        path: ./.venv
+        path: dist/*
+
+
